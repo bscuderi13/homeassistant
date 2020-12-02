@@ -1,0 +1,8 @@
+## in your sensor section of your configuration.yaml like this then reboot home assistant and your mqtt sensor appears
+sensor:
+  - platform: mqtt
+    name: "Pot Soil Moisture"
+    state_topic: "potsoil"
+    unit_of_measurement: '%'
+    value_template: "{{ value_json.moisture }}"
+    force_update: true
